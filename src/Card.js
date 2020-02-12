@@ -7,13 +7,13 @@ import './Card.css';
 // These props will be passed in for each Card from the List component.
 
 class Card extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: props.title,
-            content: props.content
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         title: props.title,
+    //         content: props.content
+    //     };
+    // }
 
     render(){
         return (

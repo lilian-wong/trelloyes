@@ -29,7 +29,7 @@ export const STORE = {
       'e': { id: 'e', title: 'Fifth card', content: 'lorem ipsum' },
       'f': { id: 'f', title: 'Sixth card', content: 'lorem ipsum' },
       'g': { id: 'g', title: 'Seventh card', content: 'lorem ipsum' },
-      'h': { id: 'h', title: 'Eighth card', content: 'lorem ipsum' },
+      'h': { id: 'h', title: 'Eighth card', content: 'lorem ipsum' }, 
       'i': { id: 'i', title: 'Ninth card', content: 'lorem ipsum' },
       'j': { id: 'j', title: 'Tenth card', content: 'lorem ipsum' },
       'k': { id: 'k', title: 'Eleventh card', content: 'lorem ipsum' },

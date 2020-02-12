@@ -17,7 +17,7 @@ function List(props){
     const cardsLis = cards.map((card)=> 
         <Card key = {card.id} title={card.title} content={card.content}/>
     );
-
+    console.log(cards);
     return (
         <section className='List'>
             <header className='List-header'>   
