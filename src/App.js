@@ -29,26 +29,21 @@ class App extends Component {
   handleDeleteCard = (cardId, listId) => {
     let lists = this.state.store.lists;
     let allCards = this.state.store.allCards;
-    let newCards = omit(allCards, cardId);
+    const newLists = lists.map(list => ({
+      ...list,
+      cardIds: (list.id===listId)?list.cardIds.filter(id => id !== cardId):list.cardIds
+    }));
 
-    let newLists = lists.map(list => {
-      
-      if(list.id===listId){
-        let newIndex = list.cardIds.indexOf(cardId);
-        newIndex=newIndex.toString();
-        let newCardIds = omit(list.cardIds,newIndex);
-        return{
-          id: list.id,
-          header: list.header,
-          cardIds: newCardIds
-        }
+    const newCards = omit(allCards, cardId);
+
+    this.setState({
+      store: {
+        lists: newLists,
+        allCards: allCards
       }
-      return list
     })
-    console.log(newLists);
-    
   };
- 
+
   handleAddRandomCard=(listId) => {
     let newCard = newRandomCard();
     let newStore = this.state.store;
