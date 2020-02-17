@@ -9,25 +9,31 @@
 // The content prop is a string of the Card's content.
 
 import React from 'react';
+import Card from './Card'
 import './List.css';
-import Card from './Card';
 
-function List(props){
-    const cards = props.cards;
-    const cardsLis = cards.map((card)=> 
-        <Card key = {card.id} title={card.title} content={card.content}/>
-    );
-    console.log(cards);
-    return (
-        <section className='List'>
-            <header className='List-header'>   
-                <h2>{props.title}</h2>    
-            </header>  
-            <div className="List-cards">
-                {cardsLis}
-                <button type="button" className="List-add-button"> + Add Random Card</button>
-            </div>
-        </section>
-    )
+export default function List(props) {
+
+  return (
+    <section className='List'>
+      <header className='List-header'>
+        <h2>{props.header}</h2>
+      </header>
+      <div className='List-cards'>
+        {props.cards.map((card) =>
+          <Card
+            key={card.id}
+            id={card.id}
+            title={card.title}
+            content={card.content}
+            onClickDeleteCard={props.onClickDeleteCard}
+            listID = {props.id}
+          />
+        )}
+        <button type='button' className='List-add-button' onClick = {() =>props.onClickAddRandomCard(props.id)}>
+          + Add Random Card
+        </button>
+      </div>
+    </section>
+  )
 }
-export default List;

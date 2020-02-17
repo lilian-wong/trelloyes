@@ -20,11 +20,13 @@ describe('Card and List Component', () => {
     it('render Card without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<Card />, div);
+        ReactDOM.unmountComponentAtNode(div);
     });
 
     it('render List without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<List cards={sampleCardsLis}/>, div);
+        ReactDOM.unmountComponentAtNode(div);
     });
 
     it('Card component is working', ()=>{

@@ -6,25 +6,15 @@ import './Card.css';
 // content is a string of the card's content.
 // These props will be passed in for each Card from the List component.
 
-class Card extends React.Component{
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         title: props.title,
-    //         content: props.content
-    //     };
-    // }
 
-    render(){
-        return (
-            <div className="Card">
-                <button type="button">delete</button>
-                <h3>{this.props.title}</h3>
-                <p>{this.props.content}</p>
-            </div>
-        )
-    }
+export default function Card(props) {
+    return (
+      <div className='Card'>
+        <button type='button' onClick={() => props.onClickDeleteCard(props.id,props.listID)} >
+          delete
+        </button>
+        <h3>{props.title}</h3>
+        <p>{props.content}</p>
+      </div>
+    )
 }
-
-
-export default Card
